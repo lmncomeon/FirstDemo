@@ -19,7 +19,7 @@
     
     self.view.backgroundColor = [UIColor yellowColor];
     
-    [self setupNavWithTitle:@"mine"];
+    [self setupNavWithTitle:@"个人中心"];
 }
 
 @end

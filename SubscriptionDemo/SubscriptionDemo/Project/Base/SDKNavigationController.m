@@ -47,7 +47,7 @@
 - (UIBarButtonItem *)createBackButton
 {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
-    [button setImage:[UIImage imageNamed:@"RiskControlBundle.bundle/arrow_back_white"]
+    [button setImage:[UIImage imageNamed:@"arrow_back_white"]
             forState:UIControlStateNormal];
     button.tintColor = commonBlackColor;
     [button addTarget:self action:@selector(popself)

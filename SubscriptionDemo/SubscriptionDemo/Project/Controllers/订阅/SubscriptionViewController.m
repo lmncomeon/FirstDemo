@@ -19,7 +19,8 @@
 
     self.view.backgroundColor = [UIColor greenColor];
     
-    [self setupNavWithTitle:@"ws"];
+    [self setupNavWithTitle:@"订阅"];
 }
+
 
 @end
