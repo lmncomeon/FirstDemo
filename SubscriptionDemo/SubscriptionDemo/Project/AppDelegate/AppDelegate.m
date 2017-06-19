@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "SDKProjectHeader.h"
-#import "ViewController.h"
 #import "MainTabBarController.h"
 
 @interface AppDelegate ()
@@ -33,7 +32,7 @@
     //初始化根视图控制器
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
-    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[MainTabBarController new]];
+    self.window.rootViewController = [MainTabBarController new];
     [self.window makeKeyAndVisible];
     
     return YES;
