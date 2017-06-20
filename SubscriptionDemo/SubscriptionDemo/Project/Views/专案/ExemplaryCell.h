@@ -12,7 +12,12 @@
 @interface ExemplaryCell : BaseTableViewCell
 
 @property (nonatomic, copy) void (^sendIndex)(NSInteger page);
+@property (nonatomic, copy) void (^controlScrollBlock)(BOOL result);
 
 - (void)switchViewMethod:(NSInteger)page;
+
+@property (nonatomic, assign) BOOL cellCanScroll;
+
+@property (nonatomic, assign) BOOL cellCanDrag;
 
 @end

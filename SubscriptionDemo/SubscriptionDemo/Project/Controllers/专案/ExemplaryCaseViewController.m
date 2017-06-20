@@ -20,6 +20,10 @@
 @property (nonatomic, strong) UIButton *selectedBtn;
 @property (nonatomic, strong) NSArray *buttonTitleArr;
 
+@property (nonatomic, assign) BOOL canScroll;
+@property (nonatomic, assign) BOOL cellCanDrag;
+@property (nonatomic, strong) ExemplaryCell *currentCell;
+
 @end
 
 // cell identifier
@@ -104,7 +108,21 @@ static NSInteger const switchBtnTag    = 1000;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         self.ADView.contentList = @[@"你好0", @"你好1", @"你好2", @"你好3", @"你好4"];
     });
+    
+    // 默认
+    self.canScroll   = YES;
+    self.cellCanDrag = YES;
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeScrollStatus) name:@"leaveTop" object:nil];
   
+}
+
+#pragma mark notify
+- (void)changeScrollStatus//改变主视图的状态
+{
+    self.canScroll = YES;
+    self.currentCell.cellCanScroll = NO;
 }
 
 #pragma mark - tableview datasource
@@ -123,6 +141,12 @@ static NSInteger const switchBtnTag    = 1000;
         [self changeBtnProperty:btn];
         
     };
+    cell.controlScrollBlock = ^ (BOOL res) {
+        _mainTableView.scrollEnabled = res;
+    };
+    cell.cellCanDrag = self.cellCanDrag;
+    self.currentCell = cell;
+    
     return cell;
 }
 
@@ -168,5 +192,33 @@ static NSInteger const switchBtnTag    = 1000;
     return _buttonTitleArr;
 }
 
+
+#pragma mark UIScrollView
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [self old:scrollView];
+}
+
+- (void)old:(UIScrollView *)scrollView {
+    CGFloat bottomCellOffset = _mainTableView.tableHeaderView.height;
+    if (scrollView.contentOffset.y >= bottomCellOffset) {
+        scrollView.contentOffset = CGPointMake(0, bottomCellOffset);
+        if (self.canScroll) {
+            self.canScroll = NO;
+            self.currentCell.cellCanScroll = YES;
+            self.currentCell.cellCanDrag   = NO;
+        }
+    }else{
+        if (!self.canScroll) {//子视图没到顶部
+            scrollView.contentOffset = CGPointMake(0, bottomCellOffset);
+        
+        } else {
+            if (scrollView.contentOffset.y <= 0) {
+                self.currentCell.cellCanDrag = YES;
+            }
+        }
+    }
+    
+}
 
 @end
