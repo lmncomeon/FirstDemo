@@ -16,7 +16,7 @@
 #import "GroupViewController.h"
 #import "MineViewController.h"
 
-@interface MainTabBarController ()
+@interface MainTabBarController () 
 
 @end
 
@@ -56,6 +56,5 @@
     
     [self addChildViewController:nav];
 }
-
 
 @end

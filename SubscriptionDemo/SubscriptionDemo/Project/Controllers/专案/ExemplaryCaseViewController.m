@@ -115,7 +115,7 @@ static NSInteger const switchBtnTag    = 1000;
     
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeScrollStatus) name:@"leaveTop" object:nil];
-  
+
 }
 
 #pragma mark notify
@@ -219,6 +219,11 @@ static NSInteger const switchBtnTag    = 1000;
         }
     }
     
+}
+
+#pragma mark - dealloc
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

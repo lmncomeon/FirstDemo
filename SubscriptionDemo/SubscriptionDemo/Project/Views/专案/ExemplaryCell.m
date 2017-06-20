@@ -14,6 +14,8 @@
 
 @property (nonatomic, strong) UIScrollView *container;
 
+@property (nonatomic, assign) BOOL flag; // 区分点击按钮造成的滚动
+
 @property (nonatomic, strong) UITableView *hotTableView;    // 热门
 @property (nonatomic, strong) UITableView *newestTableView; // 最新
 @property (nonatomic, strong) UITableView *wholeTableView;  // 全部
@@ -25,6 +27,7 @@
 @property (nonatomic, strong) NSMutableArray *hotListArray;
 @property (nonatomic, strong) NSMutableArray *newestListArray;
 @property (nonatomic, strong) NSMutableArray *wholeListArray;
+
 
 @end
 
@@ -68,6 +71,7 @@ static NSString *const ExemplaryContentCellID = @"ExemplaryContentCell";
 
 - (void)setupDefaultValue {
     _hotPage = _newestPage = _wholePage = 0;
+    _flag = false;
 }
 
 - (void)addRefresh {
@@ -274,6 +278,10 @@ static NSString *const ExemplaryContentCellID = @"ExemplaryContentCell";
 }
 
 #pragma mark - scrollView delegate
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    _flag = false;
+}
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     if (scrollView == _container)
     {
@@ -282,7 +290,9 @@ static NSString *const ExemplaryContentCellID = @"ExemplaryContentCell";
         !_sendIndex ? : _sendIndex(page);
         
         // false
-        !_controlScrollBlock ? : _controlScrollBlock(false);
+        if (!_flag) {
+            !_controlScrollBlock ? : _controlScrollBlock(false);
+        }
         
     } else if (scrollView == _hotTableView || scrollView == _newestTableView || scrollView == _wholeTableView) {
         
@@ -324,9 +334,10 @@ static NSString *const ExemplaryContentCellID = @"ExemplaryContentCell";
 
 // 联动
 - (void)switchViewMethod:(NSInteger)page {
+    _flag = true;
+
     [_container setContentOffset:CGPointMake(kScreenWidth*page, 0) animated:true];
-    
-    
+
 }
 
 

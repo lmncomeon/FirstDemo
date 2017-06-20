@@ -123,6 +123,7 @@
 		BE8EDA9F1EF76D4100F2724C /* SubscriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8EDA9E1EF76D4100F2724C /* SubscriptionViewController.m */; };
 		BE8EDAA21EF76D5500F2724C /* GroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8EDAA11EF76D5500F2724C /* GroupViewController.m */; };
 		BE8EDAA51EF76D5C00F2724C /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8EDAA41EF76D5C00F2724C /* MineViewController.m */; };
+		BEC210D61EF907690058E279 /* ExemplaryCaseDetailMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC210D51EF907690058E279 /* ExemplaryCaseDetailMainViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -353,6 +354,8 @@
 		BE8EDAA11EF76D5500F2724C /* GroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupViewController.m; sourceTree = "<group>"; };
 		BE8EDAA31EF76D5C00F2724C /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		BE8EDAA41EF76D5C00F2724C /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		BEC210D41EF907680058E279 /* ExemplaryCaseDetailMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExemplaryCaseDetailMainViewController.h; sourceTree = "<group>"; };
+		BEC210D51EF907690058E279 /* ExemplaryCaseDetailMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExemplaryCaseDetailMainViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -891,8 +894,18 @@
 			children = (
 				BE8EDA9A1EF76D2600F2724C /* ExemplaryCaseViewController.h */,
 				BE8EDA9B1EF76D2600F2724C /* ExemplaryCaseViewController.m */,
+				BEC210D31EF906FD0058E279 /* 详情 */,
 			);
 			path = "专案";
+			sourceTree = "<group>";
+		};
+		BEC210D31EF906FD0058E279 /* 详情 */ = {
+			isa = PBXGroup;
+			children = (
+				BEC210D41EF907680058E279 /* ExemplaryCaseDetailMainViewController.h */,
+				BEC210D51EF907690058E279 /* ExemplaryCaseDetailMainViewController.m */,
+			);
+			path = "详情";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1013,6 +1026,7 @@
 				BE8EDA831EF76B4300F2724C /* SDWebImageDownloader.m in Sources */,
 				BE8EDA511EF76B4300F2724C /* Base64.m in Sources */,
 				BE8EDA371EF76B4300F2724C /* SDKJWTextField.m in Sources */,
+				BEC210D61EF907690058E279 /* ExemplaryCaseDetailMainViewController.m in Sources */,
 				BE8EDA671EF76B4300F2724C /* NSObject+MJCoding.m in Sources */,
 				BE8EDA321EF76B4300F2724C /* UIView+CustomView.m in Sources */,
 				BE54E5A81EF7D709009016F8 /* ExemplaryContentModel.m in Sources */,

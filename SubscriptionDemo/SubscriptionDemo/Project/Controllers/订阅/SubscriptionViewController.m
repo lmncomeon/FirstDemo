@@ -22,5 +22,4 @@
     [self setupNavWithTitle:@"订阅"];
 }
 
-
 @end
