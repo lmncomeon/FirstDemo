@@ -124,6 +124,9 @@
 		BE8EDAA21EF76D5500F2724C /* GroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8EDAA11EF76D5500F2724C /* GroupViewController.m */; };
 		BE8EDAA51EF76D5C00F2724C /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8EDAA41EF76D5C00F2724C /* MineViewController.m */; };
 		BEC210D61EF907690058E279 /* ExemplaryCaseDetailMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC210D51EF907690058E279 /* ExemplaryCaseDetailMainViewController.m */; };
+		BEC210DD1EF91D5D0058E279 /* SubscribeNowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC210DC1EF91D5D0058E279 /* SubscribeNowViewController.m */; };
+		BEC210E11EF920AB0058E279 /* SubscriptionOptionsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC210E01EF920AB0058E279 /* SubscriptionOptionsCell.m */; };
+		BEC210E51EF923580058E279 /* SubscriptionOptionsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC210E41EF923580058E279 /* SubscriptionOptionsModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -356,6 +359,12 @@
 		BE8EDAA41EF76D5C00F2724C /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 		BEC210D41EF907680058E279 /* ExemplaryCaseDetailMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExemplaryCaseDetailMainViewController.h; sourceTree = "<group>"; };
 		BEC210D51EF907690058E279 /* ExemplaryCaseDetailMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExemplaryCaseDetailMainViewController.m; sourceTree = "<group>"; };
+		BEC210DB1EF91D5D0058E279 /* SubscribeNowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscribeNowViewController.h; sourceTree = "<group>"; };
+		BEC210DC1EF91D5D0058E279 /* SubscribeNowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscribeNowViewController.m; sourceTree = "<group>"; };
+		BEC210DF1EF920AB0058E279 /* SubscriptionOptionsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscriptionOptionsCell.h; sourceTree = "<group>"; };
+		BEC210E01EF920AB0058E279 /* SubscriptionOptionsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscriptionOptionsCell.m; sourceTree = "<group>"; };
+		BEC210E31EF923580058E279 /* SubscriptionOptionsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscriptionOptionsModel.h; sourceTree = "<group>"; };
+		BEC210E41EF923580058E279 /* SubscriptionOptionsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscriptionOptionsModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -839,6 +848,7 @@
 			isa = PBXGroup;
 			children = (
 				BE54E59B1EF7C866009016F8 /* 专案 */,
+				BEC210DE1EF9206C0058E279 /* 订阅 */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -858,6 +868,7 @@
 			isa = PBXGroup;
 			children = (
 				BE54E5A51EF7D6FB009016F8 /* 专案 */,
+				BEC210E21EF923420058E279 /* 订阅 */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -867,6 +878,7 @@
 			children = (
 				BE8EDA9D1EF76D4100F2724C /* SubscriptionViewController.h */,
 				BE8EDA9E1EF76D4100F2724C /* SubscriptionViewController.m */,
+				BEC210DA1EF91C590058E279 /* 订阅流程 */,
 			);
 			path = "订阅";
 			sourceTree = "<group>";
@@ -906,6 +918,33 @@
 				BEC210D51EF907690058E279 /* ExemplaryCaseDetailMainViewController.m */,
 			);
 			path = "详情";
+			sourceTree = "<group>";
+		};
+		BEC210DA1EF91C590058E279 /* 订阅流程 */ = {
+			isa = PBXGroup;
+			children = (
+				BEC210DB1EF91D5D0058E279 /* SubscribeNowViewController.h */,
+				BEC210DC1EF91D5D0058E279 /* SubscribeNowViewController.m */,
+			);
+			path = "订阅流程";
+			sourceTree = "<group>";
+		};
+		BEC210DE1EF9206C0058E279 /* 订阅 */ = {
+			isa = PBXGroup;
+			children = (
+				BEC210DF1EF920AB0058E279 /* SubscriptionOptionsCell.h */,
+				BEC210E01EF920AB0058E279 /* SubscriptionOptionsCell.m */,
+			);
+			path = "订阅";
+			sourceTree = "<group>";
+		};
+		BEC210E21EF923420058E279 /* 订阅 */ = {
+			isa = PBXGroup;
+			children = (
+				BEC210E31EF923580058E279 /* SubscriptionOptionsModel.h */,
+				BEC210E41EF923580058E279 /* SubscriptionOptionsModel.m */,
+			);
+			path = "订阅";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1002,6 +1041,7 @@
 				BE8EDA741EF76B4300F2724C /* MJRefreshBackNormalFooter.m in Sources */,
 				BE8EDA691EF76B4300F2724C /* NSObject+MJProperty.m in Sources */,
 				BE8EDA4F1EF76B4300F2724C /* SDKFormatJudge.m in Sources */,
+				BEC210E51EF923580058E279 /* SubscriptionOptionsModel.m in Sources */,
 				BE8EDA711EF76B4300F2724C /* MJRefreshAutoNormalFooter.m in Sources */,
 				BE8EDA951EF76C7000F2724C /* MainTabBarController.m in Sources */,
 				BE39BF7C1EF7AA6D00491D3C /* AdvertisementView.m in Sources */,
@@ -1034,6 +1074,7 @@
 				BE8EDA601EF76B4300F2724C /* MJDictionaryCache.m in Sources */,
 				BE8EDA881EF76B4300F2724C /* UIImage+GIF.m in Sources */,
 				BE8EDA8A1EF76B4300F2724C /* UIImage+WebP.m in Sources */,
+				BEC210E11EF920AB0058E279 /* SubscriptionOptionsCell.m in Sources */,
 				BE8EDA451EF76B4300F2724C /* AFNetworkActivityIndicatorManager.m in Sources */,
 				BE8EDA6A1EF76B4300F2724C /* NSString+MJExtension.m in Sources */,
 				BE8EDA771EF76B4300F2724C /* MJRefreshNormalHeader.m in Sources */,
@@ -1051,6 +1092,7 @@
 				BE8EDA811EF76B4300F2724C /* SDWebImageCompat.m in Sources */,
 				BE8EDA8B1EF76B4300F2724C /* UIImageView+HighlightedWebCache.m in Sources */,
 				BE8EDA8D1EF76B4300F2724C /* UIView+WebCacheOperation.m in Sources */,
+				BEC210DD1EF91D5D0058E279 /* SubscribeNowViewController.m in Sources */,
 				BE8EDA4C1EF76B4300F2724C /* UIWebView+AFNetworking.m in Sources */,
 				BE8EDA891EF76B4300F2724C /* UIImage+MultiFormat.m in Sources */,
 				BE8EDA871EF76B4300F2724C /* UIButton+WebCache.m in Sources */,

@@ -7,7 +7,7 @@
 //
 
 #import "SubscriptionViewController.h"
-
+#import "SubscribeNowViewController.h"
 @interface SubscriptionViewController ()
 
 @end
@@ -20,7 +20,13 @@
     self.view.backgroundColor = [UIColor greenColor];
     
     [self setupNavWithTitle:@"订阅"];
-    
+ 
+    __weak __typeof(&*self)weakSelf = self;
+    [self.view addSingleTapEvent:^{
+        SubscribeNowViewController *vc =[SubscribeNowViewController new];
+        vc.hidesBottomBarWhenPushed = true;
+        [weakSelf.navigationController pushViewController:vc animated:true];
+    }];
 }
 
 @end
