@@ -11,6 +11,8 @@
 #import "UIView+CustomView.h"
 #import "SDKProjectHeader.h"
 #import "SDKCustomLabel.h"
+#import "SDKAboutText.h"
+#import "UIImage+ColorImage.h"
 
 @interface BaseTableViewCell : UITableViewCell
 

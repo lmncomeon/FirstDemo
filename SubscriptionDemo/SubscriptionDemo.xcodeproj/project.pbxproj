@@ -127,6 +127,8 @@
 		BEC210DD1EF91D5D0058E279 /* SubscribeNowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC210DC1EF91D5D0058E279 /* SubscribeNowViewController.m */; };
 		BEC210E11EF920AB0058E279 /* SubscriptionOptionsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC210E01EF920AB0058E279 /* SubscriptionOptionsCell.m */; };
 		BEC210E51EF923580058E279 /* SubscriptionOptionsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC210E41EF923580058E279 /* SubscriptionOptionsModel.m */; };
+		BEF437821EFA216E007A8EE6 /* MineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF437811EFA216E007A8EE6 /* MineCell.m */; };
+		BEF437861EFA229E007A8EE6 /* MineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF437851EFA229E007A8EE6 /* MineModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -365,6 +367,10 @@
 		BEC210E01EF920AB0058E279 /* SubscriptionOptionsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscriptionOptionsCell.m; sourceTree = "<group>"; };
 		BEC210E31EF923580058E279 /* SubscriptionOptionsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscriptionOptionsModel.h; sourceTree = "<group>"; };
 		BEC210E41EF923580058E279 /* SubscriptionOptionsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscriptionOptionsModel.m; sourceTree = "<group>"; };
+		BEF437801EFA216E007A8EE6 /* MineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineCell.h; sourceTree = "<group>"; };
+		BEF437811EFA216E007A8EE6 /* MineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineCell.m; sourceTree = "<group>"; };
+		BEF437841EFA229E007A8EE6 /* MineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineModel.h; sourceTree = "<group>"; };
+		BEF437851EFA229E007A8EE6 /* MineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -850,6 +856,7 @@
 				BE54E59B1EF7C866009016F8 /* 专案 */,
 				BEC210DE1EF9206C0058E279 /* 订阅 */,
 				BEF4377E1EFA1FD3007A8EE6 /* 群组 */,
+				BEF4377F1EFA2153007A8EE6 /* 我的 */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -870,6 +877,7 @@
 			children = (
 				BE54E5A51EF7D6FB009016F8 /* 专案 */,
 				BEC210E21EF923420058E279 /* 订阅 */,
+				BEF437831EFA2292007A8EE6 /* 我的 */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -953,6 +961,24 @@
 			children = (
 			);
 			path = "群组";
+			sourceTree = "<group>";
+		};
+		BEF4377F1EFA2153007A8EE6 /* 我的 */ = {
+			isa = PBXGroup;
+			children = (
+				BEF437801EFA216E007A8EE6 /* MineCell.h */,
+				BEF437811EFA216E007A8EE6 /* MineCell.m */,
+			);
+			path = "我的";
+			sourceTree = "<group>";
+		};
+		BEF437831EFA2292007A8EE6 /* 我的 */ = {
+			isa = PBXGroup;
+			children = (
+				BEF437841EFA229E007A8EE6 /* MineModel.h */,
+				BEF437851EFA229E007A8EE6 /* MineModel.m */,
+			);
+			path = "我的";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1042,6 +1068,7 @@
 				BE8EDA411EF76B4300F2724C /* AFURLSessionManager.m in Sources */,
 				BE8EDA6F1EF76B4300F2724C /* MJRefreshHeader.m in Sources */,
 				BE8EDAA21EF76D5500F2724C /* GroupViewController.m in Sources */,
+				BEF437861EFA229E007A8EE6 /* MineModel.m in Sources */,
 				BE8EDA851EF76B4300F2724C /* SDWebImageManager.m in Sources */,
 				BE8EDA8C1EF76B4300F2724C /* UIImageView+WebCache.m in Sources */,
 				BE8EDA661EF76B4300F2724C /* NSObject+MJClass.m in Sources */,
@@ -1110,6 +1137,7 @@
 				BE8EDA3A1EF76B4300F2724C /* AFHTTPRequestOperationManager.m in Sources */,
 				BE8EDA651EF76B4300F2724C /* MJPropertyType.m in Sources */,
 				BE8EDA6D1EF76B4300F2724C /* MJRefreshComponent.m in Sources */,
+				BEF437821EFA216E007A8EE6 /* MineCell.m in Sources */,
 				BE8EDA4B1EF76B4300F2724C /* UIRefreshControl+AFNetworking.m in Sources */,
 				BE8EDA501EF76B4300F2724C /* UIViewController+KeyboardCorver.m in Sources */,
 				BE8EDA381EF76B4300F2724C /* SDKTTooltipView.m in Sources */,

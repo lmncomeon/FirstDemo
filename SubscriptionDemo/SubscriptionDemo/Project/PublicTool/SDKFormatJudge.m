@@ -36,90 +36,34 @@
     return [realNamePredicate evaluateWithObject:realName];
 }
 #pragma mark - 验证身份证号码
-+ (BOOL)isValidateIDCardNumber:(NSString *)value {
-    value = [value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    NSInteger length = 0;
-    if (!value) {
-        return NO;
-    }else {
-        length = value.length;
-        if (length != 15 && length !=18) {
-            return NO;
-        }
-    }
-    NSArray *areasArray =@[@"11", @"12", @"13", @"14", @"15", @"21", @"22", @"23", @"31", @"32", @"33", @"34", @"35", @"36", @"37", @"41", @"42", @"43", @"44", @"45", @"46", @"50", @"51", @"52", @"53", @"54", @"61", @"62", @"63", @"64", @"65", @"71", @"81", @"82", @"91"];
++ (BOOL)isValidateIDCardNumber:(NSString *)holdCard {
+    BOOL rest = false;
+    if (nil == holdCard || holdCard.length != 18) return rest;
     
-    NSString *valueStart2 = [value substringToIndex:2];
-    BOOL areaFlag = NO;
-    for (NSString *areaCode in areasArray) {
-        if ([areaCode isEqualToString:valueStart2]) {
-            areaFlag =YES;
-            break;
+    NSArray *powers = @[@7, @9, @10, @5, @8, @4, @2, @1, @6, @3, @7, @9, @10, @5, @8, @4, @2];
+    
+    NSArray *parityBit = @[@"1", @"0", @"X", @"9", @"8", @"7", @"6",
+                           @"5", @"4", @"3", @"2"];
+    
+    NSString *num = [holdCard substringWithRange:NSMakeRange(0, 17)];
+    
+    NSString *last = [holdCard substringFromIndex:holdCard.length-1];
+    int power = 0;
+    for (int i = 0; i < 17; i++) {
+        if ([num characterAtIndex:i] < '0' || [num characterAtIndex:i] > '9') {
+            return false;
+        } else {
+            unichar s = [num characterAtIndex:i];
+            power += s * [powers[i] intValue];
         }
     }
-    if (!areaFlag) {
-        return NO;
+    
+    int mod = power % 11;
+    NSString * modString = parityBit[mod];
+    if ([modString caseInsensitiveCompare:last]) {
+        rest = true;
     }
-    NSRegularExpression *regularExpression;
-    NSUInteger numberofMatch;
-    NSInteger year = 0;
-    switch (length) {
-        case 15:
-            year = [value substringWithRange:NSMakeRange(6,2)].intValue +1900;
-            
-            if (year % 4 ==0 || (year % 100 ==0 && year % 4 ==0)) {
-                
-                regularExpression = [[NSRegularExpression alloc] initWithPattern:@"^[1-9][0-9]{5}[0-9]{2}((01|03|05|07|08|10|12)(0[1-9]|[1-2][0-9]|3[0-1])|(04|06|09|11)(0[1-9]|[1-2][0-9]|30)|02(0[1-9]|[1-2][0-9]))[0-9]{3}$"
-                                                                         options:NSRegularExpressionCaseInsensitive
-                                                                           error:nil];
-            }else {
-                regularExpression = [[NSRegularExpression alloc] initWithPattern:@"^[1-9][0-9]{5}[0-9]{2}((01|03|05|07|08|10|12)(0[1-9]|[1-2][0-9]|3[0-1])|(04|06|09|11)(0[1-9]|[1-2][0-9]|30)|02(0[1-9]|1[0-9]|2[0-8]))[0-9]{3}$"
-                                                                         options:NSRegularExpressionCaseInsensitive
-                                                                           error:nil];
-            }
-            numberofMatch = [regularExpression numberOfMatchesInString:value
-                                                               options:NSMatchingReportProgress
-                                                                 range:NSMakeRange(0, value.length)];
-            
-            if(numberofMatch > 0) {
-                return YES;
-            }else {
-                return NO;
-            }
-            break;
-        case 18:
-            year = [value substringWithRange:NSMakeRange(6,4)].intValue;
-            if (year % 4 ==0 || (year % 100 ==0 && year % 4 ==0)) {
-                regularExpression = [[NSRegularExpression alloc] initWithPattern:@"^[1-9][0-9]{5}19[0-9]{2}((01|03|05|07|08|10|12)(0[1-9]|[1-2][0-9]|3[0-1])|(04|06|09|11)(0[1-9]|[1-2][0-9]|30)|02(0[1-9]|[1-2][0-9]))[0-9]{3}[0-9Xx]$"
-                                                                         options:NSRegularExpressionCaseInsensitive
-                                                                           error:nil];
-            }else {
-                regularExpression = [[NSRegularExpression alloc] initWithPattern:@"^[1-9][0-9]{5}19[0-9]{2}((01|03|05|07|08|10|12)(0[1-9]|[1-2][0-9]|3[0-1])|(04|06|09|11)(0[1-9]|[1-2][0-9]|30)|02(0[1-9]|1[0-9]|2[0-8]))[0-9]{3}[0-9Xx]$"
-                                                                         options:NSRegularExpressionCaseInsensitive
-                                                                           error:nil];
-            }
-            numberofMatch = [regularExpression numberOfMatchesInString:value
-                                                               options:NSMatchingReportProgress
-                                                                 range:NSMakeRange(0, value.length)];
-            if(numberofMatch > 0) {
-                NSInteger S = ([value substringWithRange:NSMakeRange(0,1)].intValue + [value substringWithRange:NSMakeRange(10,1)].intValue) *7 + ([value substringWithRange:NSMakeRange(1,1)].intValue + [value substringWithRange:NSMakeRange(11,1)].intValue) *9 + ([value substringWithRange:NSMakeRange(2,1)].intValue + [value substringWithRange:NSMakeRange(12,1)].intValue) *10 + ([value substringWithRange:NSMakeRange(3,1)].intValue + [value substringWithRange:NSMakeRange(13,1)].intValue) *5 + ([value substringWithRange:NSMakeRange(4,1)].intValue + [value substringWithRange:NSMakeRange(14,1)].intValue) *8 + ([value substringWithRange:NSMakeRange(5,1)].intValue + [value substringWithRange:NSMakeRange(15,1)].intValue) *4 + ([value substringWithRange:NSMakeRange(6,1)].intValue + [value substringWithRange:NSMakeRange(16,1)].intValue) *2 + [value substringWithRange:NSMakeRange(7,1)].intValue *1 + [value substringWithRange:NSMakeRange(8,1)].intValue *6 + [value substringWithRange:NSMakeRange(9,1)].intValue *3;
-                NSInteger Y = S % 11;
-                NSString *M = @"F";
-                NSString *JYM = @"10X98765432";
-                M = [JYM substringWithRange:NSMakeRange(Y,1)]; // 判断校验位
-                if ([M isEqualToString:[value substringWithRange:NSMakeRange(17,1)]]) {
-                    return YES;// 检测ID的校验位
-                }else {
-                    return NO;
-                }
-            }else {
-                return NO;
-            }
-            break;
-        default:
-            return NO;
-            break;
-    }
+    return rest;
 }
 #pragma mark - 验证手机号码
 + (BOOL)isValidateMobile:(NSString *)mobile {
