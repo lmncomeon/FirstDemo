@@ -29,7 +29,9 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         CGFloat circleWH = adaptX(22);
-        _circleView = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width-circleWH-kDefaultPadding, (self.frame.size.height-circleWH)*0.5, circleWH, circleWH)];
+        DLog(@"===%@", NSStringFromCGRect(self.frame));
+        
+        _circleView = [[UIImageView alloc] initWithFrame:CGRectMake(kScreenWidth-circleWH-kDefaultPadding, (adaptY(100)-circleWH)*0.5, circleWH, circleWH)];
         _circleView.image = [UIImage imageNamed:@"coupon_no"];
         [self.contentView addSubview:_circleView];
     }

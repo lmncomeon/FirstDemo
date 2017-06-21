@@ -849,6 +849,7 @@
 			children = (
 				BE54E59B1EF7C866009016F8 /* 专案 */,
 				BEC210DE1EF9206C0058E279 /* 订阅 */,
+				BEF4377E1EFA1FD3007A8EE6 /* 群组 */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -945,6 +946,13 @@
 				BEC210E41EF923580058E279 /* SubscriptionOptionsModel.m */,
 			);
 			path = "订阅";
+			sourceTree = "<group>";
+		};
+		BEF4377E1EFA1FD3007A8EE6 /* 群组 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "群组";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

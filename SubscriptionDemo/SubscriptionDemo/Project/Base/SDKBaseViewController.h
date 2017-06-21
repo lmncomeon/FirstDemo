@@ -33,6 +33,7 @@
 #import "customHUD.h"
 #import "YYModel.h"
 #import "UIImageView+WebCache.h"
+#import "MJRefresh.h"
 
 
 typedef NS_ENUM(NSInteger, BaseBtnTypeStyle) {

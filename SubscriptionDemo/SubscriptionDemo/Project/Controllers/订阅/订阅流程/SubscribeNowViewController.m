@@ -117,7 +117,7 @@ static NSString *const SubscriptionOptionsCellID = @"SubscriptionOptionsCell";
             model.isNike = false;
             _selectedModel = nil;
         } else {
-        
+         
             model.isNike = true;
             _selectedModel.isNike = false;
             _selectedModel = model;
@@ -149,7 +149,6 @@ static NSString *const SubscriptionOptionsCellID = @"SubscriptionOptionsCell";
     header.backgroundColor = [UIColor groupTableViewBackgroundColor];
     
     UIView *line = [[UIView alloc] initWithFrame:CGRectMake(adaptX(10), adaptY(5), adaptX(4), adaptY(20))];
-    line.backgroundColor = [UIColor redColor];
     [header addSubview:line];
     
     SDKCustomLabel *lab = [SDKCustomLabel setLabelTitle:(section == 0 ? @"选择订阅项目" : @"选择订阅周期") setLabelFrame:CGRectMake(CGRectGetMaxX(line.frame), CGRectGetMinY(line.frame), adaptX(200), line.height) setLabelColor:[UIColor blackColor] setLabelFont:kFont(12)];
