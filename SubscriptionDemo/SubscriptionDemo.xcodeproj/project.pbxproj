@@ -127,6 +127,7 @@
 		BEC210DD1EF91D5D0058E279 /* SubscribeNowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC210DC1EF91D5D0058E279 /* SubscribeNowViewController.m */; };
 		BEC210E11EF920AB0058E279 /* SubscriptionOptionsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC210E01EF920AB0058E279 /* SubscriptionOptionsCell.m */; };
 		BEC210E51EF923580058E279 /* SubscriptionOptionsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC210E41EF923580058E279 /* SubscriptionOptionsModel.m */; };
+		BEF326F31EFA6F8F00CCEA5E /* FMVideoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF326F21EFA6F8F00CCEA5E /* FMVideoDetailViewController.m */; };
 		BEF437821EFA216E007A8EE6 /* MineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF437811EFA216E007A8EE6 /* MineCell.m */; };
 		BEF437861EFA229E007A8EE6 /* MineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF437851EFA229E007A8EE6 /* MineModel.m */; };
 /* End PBXBuildFile section */
@@ -367,6 +368,8 @@
 		BEC210E01EF920AB0058E279 /* SubscriptionOptionsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscriptionOptionsCell.m; sourceTree = "<group>"; };
 		BEC210E31EF923580058E279 /* SubscriptionOptionsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscriptionOptionsModel.h; sourceTree = "<group>"; };
 		BEC210E41EF923580058E279 /* SubscriptionOptionsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscriptionOptionsModel.m; sourceTree = "<group>"; };
+		BEF326F11EFA6F8F00CCEA5E /* FMVideoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMVideoDetailViewController.h; sourceTree = "<group>"; };
+		BEF326F21EFA6F8F00CCEA5E /* FMVideoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMVideoDetailViewController.m; sourceTree = "<group>"; };
 		BEF437801EFA216E007A8EE6 /* MineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineCell.h; sourceTree = "<group>"; };
 		BEF437811EFA216E007A8EE6 /* MineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineCell.m; sourceTree = "<group>"; };
 		BEF437841EFA229E007A8EE6 /* MineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineModel.h; sourceTree = "<group>"; };
@@ -934,6 +937,8 @@
 			children = (
 				BEC210DB1EF91D5D0058E279 /* SubscribeNowViewController.h */,
 				BEC210DC1EF91D5D0058E279 /* SubscribeNowViewController.m */,
+				BEF326F11EFA6F8F00CCEA5E /* FMVideoDetailViewController.h */,
+				BEF326F21EFA6F8F00CCEA5E /* FMVideoDetailViewController.m */,
 			);
 			path = "订阅流程";
 			sourceTree = "<group>";
@@ -1140,6 +1145,7 @@
 				BEF437821EFA216E007A8EE6 /* MineCell.m in Sources */,
 				BE8EDA4B1EF76B4300F2724C /* UIRefreshControl+AFNetworking.m in Sources */,
 				BE8EDA501EF76B4300F2724C /* UIViewController+KeyboardCorver.m in Sources */,
+				BEF326F31EFA6F8F00CCEA5E /* FMVideoDetailViewController.m in Sources */,
 				BE8EDA381EF76B4300F2724C /* SDKTTooltipView.m in Sources */,
 				BE8EDA8E1EF76B4300F2724C /* NSObject+YYModel.m in Sources */,
 				BE8EDA351EF76B4300F2724C /* SDkCustomRoundedButton.m in Sources */,

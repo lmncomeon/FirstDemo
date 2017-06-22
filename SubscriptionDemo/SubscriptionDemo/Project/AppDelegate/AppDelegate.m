@@ -16,7 +16,6 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     //生成不同分辨率时的宽高放大比例
@@ -34,6 +33,8 @@
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = [MainTabBarController new];
     [self.window makeKeyAndVisible];
+ 
+    
     
     return YES;
 }

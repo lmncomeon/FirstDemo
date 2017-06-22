@@ -27,6 +27,8 @@
         vc.hidesBottomBarWhenPushed = true;
         [weakSelf.navigationController pushViewController:vc animated:true];
     }];
+    
+    
 }
 
 @end

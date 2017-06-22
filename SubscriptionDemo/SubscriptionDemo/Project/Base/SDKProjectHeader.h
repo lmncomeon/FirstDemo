@@ -126,6 +126,7 @@
 // 取出
 #define kgetCommonData(key) [[NSUserDefaults standardUserDefaults] objectForKey:key]
 
+#define statusHH [[NSUserDefaults standardUserDefaults] objectForKey:@"999"]
 
 // userid
 #define kUserid kgetCommonData(@"userid")

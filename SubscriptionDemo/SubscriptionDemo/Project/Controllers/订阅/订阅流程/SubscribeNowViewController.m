@@ -9,6 +9,7 @@
 #import "SubscribeNowViewController.h"
 #import "SubscriptionOptionsCell.h"
 #import "SubscriptionOptionsModel.h"
+#import "FMVideoDetailViewController.h"
 
 @interface SubscribeNowViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -49,7 +50,10 @@ static NSString *const SubscriptionOptionsCellID = @"SubscriptionOptionsCell";
         [_bottomView addSingleTapEvent:^{
             if (!weakSelf.selectedModel) {
                 [weakSelf showTips];
+                return;
             }
+            
+            [weakSelf.navigationController pushViewController:[FMVideoDetailViewController new] animated:true];
         }];
     }
     return _bottomView;
