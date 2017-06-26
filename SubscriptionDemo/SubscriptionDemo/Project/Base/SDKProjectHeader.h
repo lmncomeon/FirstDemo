@@ -84,6 +84,7 @@
 #define kScaleY (kScreenHeight/568)
 
 //Font
+#define kFontName(name, float) [UIFont fontWithName:name size:float*kScaleX]
 #define kFont(float) [UIFont fontWithName:@"Helvetica" size:float*kScaleX]
 #define kLightFont(float) [UIFont fontWithName:@"Helvetica" size:float*kScaleX]
 #define kMediumFont(float) [UIFont boldSystemFontOfSize:float*kScaleX]

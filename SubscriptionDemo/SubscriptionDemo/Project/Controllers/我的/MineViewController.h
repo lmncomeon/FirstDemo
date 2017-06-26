@@ -10,4 +10,7 @@
 
 @interface MineViewController : SDKBaseViewController
 
+@property (nonatomic, assign) BOOL cellCanScroll;
+@property (nonatomic, assign) BOOL cellCanDrag;
+
 @end

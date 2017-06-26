@@ -9,7 +9,8 @@
 #import "SubscribeNowViewController.h"
 #import "SubscriptionOptionsCell.h"
 #import "SubscriptionOptionsModel.h"
-#import "FMVideoDetailViewController.h"
+//#import "FMPersonalRecommendViewController.h"
+#import "FMPersonalIntroViewController.h"
 
 @interface SubscribeNowViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -53,7 +54,9 @@ static NSString *const SubscriptionOptionsCellID = @"SubscriptionOptionsCell";
                 return;
             }
             
-            [weakSelf.navigationController pushViewController:[FMVideoDetailViewController new] animated:true];
+//            [weakSelf.navigationController pushViewController:[FMPersonalRecommendViewController new] animated:true];
+            [weakSelf.navigationController pushViewController:[FMPersonalIntroViewController new] animated:true];
+            
         }];
     }
     return _bottomView;

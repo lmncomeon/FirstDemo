@@ -7,6 +7,7 @@
 //
 
 #import "GroupViewController.h"
+#import "PresentAnimationView.h"
 
 @interface GroupViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -17,6 +18,8 @@
 @property (nonatomic, assign) NSInteger currentType;
 
 @property (nonatomic, strong) NSMutableArray *dataList;
+
+@property (nonatomic, strong) PresentAnimationView *yellowView;
 
 @end
 
@@ -67,6 +70,11 @@
     [self mainTableView];
     _page = 0;
     
+    PresentAnimationView *yellowView = [[PresentAnimationView alloc] initWithFrame:CGRectZero top:adaptY(30)];
+    
+    [self.view addSingleTapEvent:^{
+        [yellowView showAction];
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
