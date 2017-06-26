@@ -150,23 +150,5 @@ static NSString *const MineCellID = @"MineCell";
     return _dataList;
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (scrollView.contentOffset.y > 0) {
-        if (!self.cellCanScroll) {
-            scrollView.contentOffset = CGPointZero;
-        } else {
-            
-        }
-    } else {
-        if (!self.cellCanDrag) {
-            scrollView.contentOffset = CGPointZero;
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"leaveTop" object:nil];//到顶通知父视图改变状态
-        }
-        
-    }
-}
-
-
-
 
 @end
